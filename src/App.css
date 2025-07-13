@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stitched-border {
+  position: relative;
+}
+
+.stitched-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px dashed;
+  border-radius: inherit;
+  opacity: 0.3;
+}
+
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: typewriter 3s steps(40) 1s forwards, blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: currentColor; }
+}
+
+.mission-clock {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  border: 2px solid #4a5568;
+  position: relative;
+}
+
+.mission-clock::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid #718096;
+  border-radius: inherit;
+}
+
+.passport-stamp {
+  border: 3px solid #8b2635;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(-5deg);
+}
+
+.passport-stamp::after {
+  content: 'APPROVED';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(5deg);
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #8b2635;
+  opacity: 0.7;
+}
+
+.letter-paper {
+  background: linear-gradient(to bottom, 
+    transparent 0px, 
+    transparent 19px, 
+    #e2e8f0 20px, 
+    #e2e8f0 21px, 
+    transparent 21px
+  );
+  background-size: 100% 21px;
+  position: relative;
+}
+
+.letter-paper::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #f56565;
+}
+
+.route-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLine 2s ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 1.5rem;
+  }
+  
+  .mission-clock {
+    font-size: 1rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a365d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c5282;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
